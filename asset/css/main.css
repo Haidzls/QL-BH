@@ -315,6 +315,7 @@
 	display: flex;
 	flex-direction: column;
 	position: relative;
+	padding-right: 22px;
 }
 
 .sort_header{
@@ -342,7 +343,7 @@
 .sort_child{
 	display: block;
 	height: 40px;
-	width: 240px;
+	width: 280px;
 	border: 1px solid #aeb2ae;
 	background-color: #ffffff;
 	text-align: left;
@@ -462,3 +463,45 @@
 	background-color: red;
 }
 
+/* tổng tiền một mặt hàng */
+
+.profit{
+	display: inline-flex;
+	flex: 1;
+	border-radius: 8px;
+	justify-content: space-around;
+	align-items: center;
+	box-shadow: 0 0.5px 1px #3bb54a;
+	border: 2px solid #3bb54a;
+	margin-left: 16px;
+}
+
+.profit_icon{
+	font-size: 40px;
+	margin: 16px;
+	color: var(--theme-color-red);
+}
+
+.profit__info_catelory{
+	font-size: 12px;
+	font-weight: 400;
+	text-align: right;
+}
+
+.profit__info_money_1{
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.profit__info_money_2{
+	font-size: 12px;
+	font-weight: 400;
+}
+
+/* doanh thu */
+.sum_profit{
+	display: flex;
+	height: 16vh;	
+	margin-right: 22px;
+	margin-left: 10px;
+}

@@ -55,13 +55,13 @@
       </div>
       <div class="content">
         <div class="content_title">
-          <span class="content_title__name"> Quản lý kho hàng</span>
+          <span class="content_title__name"> Kiểm soát đơn hàng</span>
         </div>
         <div class="content_container">
 			<div class="content__header">
 				<div class="search">
 					<form class="search_section" method="" action="">
-						<input class="search_input" type="search" name="search" placeholder="   Tìm kiếm sản phẩm theo tên">
+						<input class="search_input" type="search" name="search" placeholder="   Tìm kiếm sản phẩm đã bán theo tên">
 						<button class="search_icon" type="submit">
 							<i class="fa-solid fa-magnifying-glass"></i>
 						</button>
@@ -72,34 +72,34 @@
 						<span>Sắp xếp</span>
 						<i class="fa-solid fa-caret-down"></i>
 					</div>
-					<ul class="sort">
+					<ul class="sort" style="right: 22px;">
 						<li class="sort_child">
 							<form method="" action="">
-								<a href="y.com">theo số lượng cao đến thấp</a>
+								<a href="y.com">theo số lượng bán từ cao đến thấp</a>
 							</form>
 						</li>
 						<li class="sort_child">
 							<form method="" action="">
-								<a href="y.com">theo số lượng thấp đến cao</a>
+								<a href="y.com">theo số lượng bán từ thấp đến cao</a>
 							</form>
 						</li>
 						<li class="sort_child">
 							<form method="" action="">
-								<a href="y.com">theo giá nhập cao đến thấp</a>
+								<a href="y.com">theo giá mua cao đến thấp</a>
 							</form>
 						</li>
 						<li class="sort_child">
 							<form method="" action="">
-								<a href="y.com">theo giá nhập thấp đến cao</a>
+								<a href="y.com">theo giá mua thấp đến cao</a>
 							</form>
 						</li>
 					</ul>
 				</div>
-				<a class="edit_button btn" href="youtube.com">
-					<span>Chỉnh sửa kho hàng</span>
-				</a>
+				<!-- <a class="edit_button btn" href="youtube.com">
+					<span>Chi tiết lượt mua</span>
+				</a> -->
 			</div>
-			<span class="note">Danh sách sản phẩm trong kho</span>
+			<span class="note">Danh sách sản phẩm đã bán</span>
 			<div class="inventory_section">
 				<div class="inventory">
 					<div class="inventory_info">
@@ -108,29 +108,30 @@
 							<span class="iventory_name">Dầu gội siêu sạch gầu </span>
 							<div class="line2">
 								<div class="iventory_in-stock">
-									<span class="inventory_description">Còn: </span>
+									<span class="inventory_description">Đã bán: </span>
 									<span class="iventory_number">999999 </span>
 								</div>
 							</div>
 							<div class="line3">
 								<div class="inventory_in">
-									<span class="inventory_description">Giá nhập: </span>
+									<span class="inventory_description">Giá bán: </span>
 									<span class="iventory_number">999999 </span>
 									<span class="inventory_vnd">vnd </span>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="inventory_button">
-						<a class="inventory_btn btn inventory_btn--add" href="youtube.com">
-							<span>Thêm</span>
-						</a>
-						<a class="inventory_btn btn inventory_btn--edit" href="youtube.com">
-							<span>Sửa</span>
-						</a>
-						<a class="inventory_btn btn inventory_btn--delete" href="youtube.com">
-							<span>Xóa</span>
-						</a>
+					<div class="profit">
+						<div class="profit_icon">
+							<i class="fa-solid fa-money-bill-trend-up" style="color: #3bb54a;"></i>
+						</div>
+						<div class="profit_info">
+							<span class="profit__info_catelory">Tổng</span>
+							<div class="profit__info_money">
+							  <span class="profit__info_money_1">+00000000</span>
+							  <span class="profit__info_money_2">VND</span>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="inventory">
@@ -140,14 +141,14 @@
 							<span class="iventory_name">Nước rửa tay </span>
 							<div class="line2">
 								<div class="iventory_in-stock">
-									<span class="inventory_description">Còn: </span>
+									<span class="inventory_description">Đã bán: </span>
 									<span class="iventory_number">999999 </span>
 								</div>
 								
 							</div>
 							<div class="line3">
 								<div class="inventory_in">
-									<span class="inventory_description">Giá nhập: </span>
+									<span class="inventory_description">Giá bán: </span>
 									<span class="iventory_number">999999 </span>
 									<span class="inventory_vnd">vnd </span>
 								</div>
@@ -155,16 +156,17 @@
 							</div>
 						</div>
 					</div>
-					<div class="inventory_button">
-						<a class="inventory_btn btn inventory_btn--add" href="youtube.com">
-							<span>Thêm</span>
-						</a>
-						<a class="inventory_btn btn inventory_btn--edit" href="youtube.com">
-							<span>Sửa</span>
-						</a>
-						<a class="inventory_btn btn inventory_btn--delete" href="youtube.com">
-							<span>Xóa</span>
-						</a>
+					<div class="profit">
+						<div class="profit_icon">
+							<i class="fa-solid fa-money-bill-trend-up" style="color: #3bb54a;"></i>
+						</div>
+						<div class="profit_info">
+							<span class="profit__info_catelory">Tổng</span>
+							<div class="profit__info_money">
+							  <span class="profit__info_money_1">+00000000</span>
+							  <span class="profit__info_money_2">VND</span>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="inventory">
@@ -174,14 +176,14 @@
 							<span class="iventory_name">Sữa rửa mặt </span>
 							<div class="line2">
 								<div class="iventory_in-stock">
-									<span class="inventory_description">Còn: </span>
+									<span class="inventory_description">Đã bán: </span>
 									<span class="iventory_number">999999 </span>
 								</div>
 								
 							</div>
 							<div class="line3">
 								<div class="inventory_in">
-									<span class="inventory_description">Giá nhập: </span>
+									<span class="inventory_description">Giá bán: </span>
 									<span class="iventory_number">999999 </span>
 									<span class="inventory_vnd">vnd </span>
 								</div>
@@ -189,16 +191,17 @@
 							</div>
 						</div>
 					</div>
-					<div class="inventory_button">
-						<a class="inventory_btn btn inventory_btn--add" href="youtube.com">
-							<span>Thêm</span>
-						</a>
-						<a class="inventory_btn btn inventory_btn--edit" href="youtube.com">
-							<span>Sửa</span>
-						</a>
-						<a class="inventory_btn btn inventory_btn--delete" href="youtube.com">
-							<span>Xóa</span>
-						</a>
+					<div class="profit">
+						<div class="profit_icon">
+							<i class="fa-solid fa-money-bill-trend-up" style="color: #3bb54a;"></i>
+						</div>
+						<div class="profit_info">
+							<span class="profit__info_catelory">Tổng</span>
+							<div class="profit__info_money">
+							  <span class="profit__info_money_1">+00000000</span>
+							  <span class="profit__info_money_2">VND</span>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="inventory">
@@ -208,14 +211,14 @@
 							<span class="iventory_name">Sữa tắm </span>
 							<div class="line2">
 								<div class="iventory_in-stock">
-									<span class="inventory_description">Còn: </span>
+									<span class="inventory_description">Đã bán: </span>
 									<span class="iventory_number">999999 </span>
 								</div>
 								
 							</div>
 							<div class="line3">
 								<div class="inventory_in">
-									<span class="inventory_description">Giá nhập: </span>
+									<span class="inventory_description">Giá bán: </span>
 									<span class="iventory_number">999999 </span>
 									<span class="inventory_vnd">vnd </span>
 								</div>
@@ -223,16 +226,17 @@
 							</div>
 						</div>
 					</div>
-					<div class="inventory_button">
-						<a class="inventory_btn btn inventory_btn--add" href="youtube.com">
-							<span>Thêm</span>
-						</a>
-						<a class="inventory_btn btn inventory_btn--edit" href="youtube.com">
-							<span>Sửa</span>
-						</a>
-						<a class="inventory_btn btn inventory_btn--delete" href="youtube.com">
-							<span>Xóa</span>
-						</a>
+					<div class="profit">
+						<div class="profit_icon">
+							<i class="fa-solid fa-money-bill-trend-up" style="color: #3bb54a;"></i>
+						</div>
+						<div class="profit_info">
+							<span class="profit__info_catelory">Tổng</span>
+							<div class="profit__info_money">
+							  <span class="profit__info_money_1">+00000000</span>
+							  <span class="profit__info_money_2">VND</span>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="inventory">
@@ -242,14 +246,14 @@
 							<span class="iventory_name">Xà phòng </span>
 							<div class="line2">
 								<div class="iventory_in-stock">
-									<span class="inventory_description">Còn: </span>
+									<span class="inventory_description">Đã bán: </span>
 									<span class="iventory_number">999999 </span>
 								</div>
 								
 							</div>
 							<div class="line3">
 								<div class="inventory_in">
-									<span class="inventory_description">Giá nhập: </span>
+									<span class="inventory_description">Giá bán: </span>
 									<span class="iventory_number">999999 </span>
 									<span class="inventory_vnd">vnd </span>
 								</div>
@@ -257,16 +261,31 @@
 							</div>
 						</div>
 					</div>
-					<div class="inventory_button">
-						<a class="inventory_btn btn inventory_btn--add" href="youtube.com">
-							<span>Thêm</span>
-						</a>
-						<a class="inventory_btn btn inventory_btn--edit" href="youtube.com">
-							<span>Sửa</span>
-						</a>
-						<a class="inventory_btn btn inventory_btn--delete" href="youtube.com">
-							<span>Xóa</span>
-						</a>
+					<div class="profit">
+						<div class="profit_icon">
+							<i class="fa-solid fa-money-bill-trend-up" style="color: #3bb54a;"></i>
+						</div>
+						<div class="profit_info">
+							<span class="profit__info_catelory">Tổng</span>
+							<div class="profit__info_money">
+							  <span class="profit__info_money_1">+00000000</span>
+							  <span class="profit__info_money_2">VND</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="sum_profit">
+				<div class="profit">
+					<div class="profit_icon">
+						<i class="fa-solid fa-money-bill-trend-up" style="color: #3bb54a;"></i>
+					</div>
+					<div class="profit_info">
+						<span class="profit__info_catelory">Tổng doanh thu</span>
+						<div class="profit__info_money">
+						  <span class="profit__info_money_1">00000000</span>
+						  <span class="profit__info_money_2">VND</span>
+						</div>
 					</div>
 				</div>
 			</div>
