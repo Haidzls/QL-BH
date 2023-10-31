@@ -44,6 +44,10 @@
     align-items: center;
 }
 
+.sidebar_header:hover{
+	cursor: pointer;
+}
+
 .sidebar_header .sidebar_header_img{
 	width: 200px;
 	height: var(--header-height);
@@ -252,3 +256,51 @@
 	box-shadow: 0 0.5px 1px #ffd110;
 	border: 2px solid #ffd110;
 }
+
+/* trang kho hang */
+
+.search{
+	padding: 10px;
+	font-size: 18px;
+	color: var(--text-color);
+	width: 50%;
+}
+
+.search_section{
+	display: flex;
+}
+
+.search_input{
+	width: 80%;
+	height: var(--input-height);
+	border-radius: 0;
+	border: 1px solid #000;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.search_icon{
+	border: 2px solid #ee0033;
+	height: var(--input-height);
+	background-color: #fff;
+	font-size: 20px;
+	color: #ee0033;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.search_icon i{
+	min-width: var(--input-height);
+	text-align: center;
+	line-height: var(--input-height);
+}
+
+.search_icon:hover{
+	box-shadow: 0px 0px 5px #fc7995;
+	cursor: pointer;
+}
+
+/* .sub__icon{
+	color: var(--theme-color-red);
+	margin-right: 4px;
+} */
