@@ -60,52 +60,255 @@
           <span class="content_title__name"> Quản lý kho hàng</span>
         </div>
         <div class="content_container">
-          <div class="search">
-			<form class="search_section" method="" action="">
-				<input class="search_input" type="search" name="search" placeholder="   Tìm kiếm đơn hàng theo tên">
-				<button class="search_icon">
-					<i class="fa-solid fa-magnifying-glass"></i>
-				</button>
-			</form>
-          </div>
-          <div class="cash_flow">
-            <div class="cash_flow__child cash_flow__child--in">
-                <div class="cash_flow__icon">
-                  <i class="fa-solid fa-warehouse"></i>
-                </div>
-                <div class="cash_flow__info">
-                  <span class="info_catelory">Tiền nhập hàng</span>
-                  <div class="info_money">
-                    <span class="info_money_1">10.000.000</span>
-                    <span class="info_money_2">VND</span>
-                  </div>
-                </div>
-            </div>
-            <div class="cash_flow__child cash_flow__child--out">
-              <div class="cash_flow__icon">
-                <i class="fa-solid fa-money-bill-trend-up" style="color: #3bb54a;"></i>
-              </div>
-              <div class="cash_flow__info">
-                <span class="info_catelory">Tiền bán hàng</span>
-                <div class="info_money">
-                  <span class="info_money_1">00000000</span>
-                  <span class="info_money_2">VND</span>
-                </div>
-              </div>
-          </div>
-          <div class="cash_flow__child cash_flow__child--profit">
-            <div class="cash_flow__icon">
-              <i class="fa-solid fa-coins" style="color: #ffd110;"></i>
-            </div>
-            <div class="cash_flow__info">
-              <span class="info_catelory">Tổng lơij nhuận</span>
-              <div class="info_money">
-                <span class="info_money_1">-10.000.000</span>
-                <span class="info_money_2">VND</span>
-              </div>
-            </div>
-        </div>
-          </div>
+			<div class="content__header">
+				<div class="search">
+					<form class="search_section" method="" action="">
+						<input class="search_input" type="search" name="search" placeholder="   Tìm kiếm sản phẩm theo tên">
+						<button class="search_icon" type="submit">
+							<i class="fa-solid fa-magnifying-glass"></i>
+						</button>
+					</form>
+				</div>
+				<div class="sort_section">
+					<div class="sort_header">
+						<span>Sắp xếp</span>
+						<i class="fa-solid fa-caret-down"></i>
+					</div>
+					<ul class="sort">
+						<li class="sort_child">
+							<form method="" action="">
+								<a href="y.com">theo số lượng cao đến thấp</a>
+							</form>
+						</li>
+						<li class="sort_child">
+							<form method="" action="">
+								<a href="y.com">theo số lượng thấp đến cao</a>
+							</form>
+						</li>
+						<li class="sort_child">
+							<form method="" action="">
+								<a href="y.com">theo giá tiền cao đến cao</a>
+							</form>
+						</li>
+						<li class="sort_child">
+							<form method="" action="">
+								<a href="y.com">theo giá tiền thấp đến cao</a>
+							</form>
+						</li>
+					</ul>
+				</div>
+				<a class="edit_button btn" href="youtube.com">
+					<span>Chỉnh sửa kho hàng</span>
+				</a>
+			</div>
+			<span class="note">Danh sách sản phẩm trong kho</span>
+			<div class="inventory_section">
+				<div class="inventory">
+					<div class="inventory_info">
+						<img class="inventory_img" src="./asset/img/dau_goi.jpg">
+						<div class="inventory_content">
+							<span class="iventory_name">Dầu gội siêu sạch gầu </span>
+							<div class="line2">
+								<div class="iventory_in-stock">
+									<span class="inventory_description">Còn: </span>
+									<span class="iventory_number">999999 </span>
+								</div>
+								<div class="iventory_sold">
+									<span class="inventory_description">Đẫ bán: </span>
+									<span class="iventory_number">999999 </span>
+								</div>
+							</div>
+							<div class="line3">
+								<div class="inventory_in">
+									<span class="inventory_description">Giá nhập: </span>
+									<span class="iventory_number">999999 </span>
+									<span class="inventory_vnd">vnd </span>
+								</div>
+								<div class="inventory_out">
+									<span class="inventory_description">Giá bán: </span>
+									<span class="iventory_number">999999 </span>
+									<span class="inventory_vnd">vnd </span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="inventory_button">
+						<a class="inventory_btn btn inventory_btn--add" href="youtube.com">
+							<span>Thêm</span>
+						</a>
+						<a class="inventory_btn btn inventory_btn--edit" href="youtube.com">
+							<span>Sửa</span>
+						</a>
+						<a class="inventory_btn btn inventory_btn--delete" href="youtube.com">
+							<span>Xóa</span>
+						</a>
+					</div>
+				</div>
+				<div class="inventory">
+					<div class="inventory_info">
+						<img class="inventory_img" src="./asset/img/nuoc_rua_tay.jpg">
+						<div class="inventory_content">
+							<span class="iventory_name">Nước rửa tay </span>
+							<div class="line2">
+								<div class="iventory_in-stock">
+									<span class="inventory_description">Còn: </span>
+									<span class="iventory_number">999999 </span>
+								</div>
+								<div class="iventory_sold">
+									<span class="inventory_description">Đẫ bán: </span>
+									<span class="iventory_number">999999 </span>
+								</div>
+							</div>
+							<div class="line3">
+								<div class="inventory_in">
+									<span class="inventory_description">Giá nhập: </span>
+									<span class="iventory_number">999999 </span>
+									<span class="inventory_vnd">vnd </span>
+								</div>
+								<div class="inventory_out">
+									<span class="inventory_description">Giá bán: </span>
+									<span class="iventory_number">999999 </span>
+									<span class="inventory_vnd">vnd </span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="inventory_button">
+						<a class="inventory_btn btn inventory_btn--add" href="youtube.com">
+							<span>Thêm</span>
+						</a>
+						<a class="inventory_btn btn inventory_btn--edit" href="youtube.com">
+							<span>Sửa</span>
+						</a>
+						<a class="inventory_btn btn inventory_btn--delete" href="youtube.com">
+							<span>Xóa</span>
+						</a>
+					</div>
+				</div>
+				<div class="inventory">
+					<div class="inventory_info">
+						<img class="inventory_img" src="./asset/img/srm.jpg">
+						<div class="inventory_content">
+							<span class="iventory_name">Sữa rửa mặt </span>
+							<div class="line2">
+								<div class="iventory_in-stock">
+									<span class="inventory_description">Còn: </span>
+									<span class="iventory_number">999999 </span>
+								</div>
+								<div class="iventory_sold">
+									<span class="inventory_description">Đẫ bán: </span>
+									<span class="iventory_number">999999 </span>
+								</div>
+							</div>
+							<div class="line3">
+								<div class="inventory_in">
+									<span class="inventory_description">Giá nhập: </span>
+									<span class="iventory_number">999999 </span>
+									<span class="inventory_vnd">vnd </span>
+								</div>
+								<div class="inventory_out">
+									<span class="inventory_description">Giá bán: </span>
+									<span class="iventory_number">999999 </span>
+									<span class="inventory_vnd">vnd </span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="inventory_button">
+						<a class="inventory_btn btn inventory_btn--add" href="youtube.com">
+							<span>Thêm</span>
+						</a>
+						<a class="inventory_btn btn inventory_btn--edit" href="youtube.com">
+							<span>Sửa</span>
+						</a>
+						<a class="inventory_btn btn inventory_btn--delete" href="youtube.com">
+							<span>Xóa</span>
+						</a>
+					</div>
+				</div>
+				<div class="inventory">
+					<div class="inventory_info">
+						<img class="inventory_img" src="./asset/img/sua_tam.jpg">
+						<div class="inventory_content">
+							<span class="iventory_name">Sữa tắm </span>
+							<div class="line2">
+								<div class="iventory_in-stock">
+									<span class="inventory_description">Còn: </span>
+									<span class="iventory_number">999999 </span>
+								</div>
+								<div class="iventory_sold">
+									<span class="inventory_description">Đẫ bán: </span>
+									<span class="iventory_number">999999 </span>
+								</div>
+							</div>
+							<div class="line3">
+								<div class="inventory_in">
+									<span class="inventory_description">Giá nhập: </span>
+									<span class="iventory_number">999999 </span>
+									<span class="inventory_vnd">vnd </span>
+								</div>
+								<div class="inventory_out">
+									<span class="inventory_description">Giá bán: </span>
+									<span class="iventory_number">999999 </span>
+									<span class="inventory_vnd">vnd </span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="inventory_button">
+						<a class="inventory_btn btn inventory_btn--add" href="youtube.com">
+							<span>Thêm</span>
+						</a>
+						<a class="inventory_btn btn inventory_btn--edit" href="youtube.com">
+							<span>Sửa</span>
+						</a>
+						<a class="inventory_btn btn inventory_btn--delete" href="youtube.com">
+							<span>Xóa</span>
+						</a>
+					</div>
+				</div>
+				<div class="inventory">
+					<div class="inventory_info">
+						<img class="inventory_img" src="./asset/img/xa_phong.jpg">
+						<div class="inventory_content">
+							<span class="iventory_name">Xà phòng </span>
+							<div class="line2">
+								<div class="iventory_in-stock">
+									<span class="inventory_description">Còn: </span>
+									<span class="iventory_number">999999 </span>
+								</div>
+								<div class="iventory_sold">
+									<span class="inventory_description">Đẫ bán: </span>
+									<span class="iventory_number">999999 </span>
+								</div>
+							</div>
+							<div class="line3">
+								<div class="inventory_in">
+									<span class="inventory_description">Giá nhập: </span>
+									<span class="iventory_number">999999 </span>
+									<span class="inventory_vnd">vnd </span>
+								</div>
+								<div class="inventory_out">
+									<span class="inventory_description">Giá bán: </span>
+									<span class="iventory_number">999999 </span>
+									<span class="inventory_vnd">vnd </span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="inventory_button">
+						<a class="inventory_btn btn inventory_btn--add" href="youtube.com">
+							<span>Thêm</span>
+						</a>
+						<a class="inventory_btn btn inventory_btn--edit" href="youtube.com">
+							<span>Sửa</span>
+						</a>
+						<a class="inventory_btn btn inventory_btn--delete" href="youtube.com">
+							<span>Xóa</span>
+						</a>
+					</div>
+				</div>
+			</div>
         </div>
       </div>
     </div>

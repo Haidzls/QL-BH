@@ -24,21 +24,15 @@ html{
 ul {
     margin: 0;
     padding: 0;
-    list-style: none;
+    list-style-type: none;
 }
 
-.row{
-	width: 100%;
-	margin-top: 20px;
-	margin-bottom: 20px;
-}
-
-.col{
-	width: 100%;
-	margin-right: 20px;
-	margin-left: 10px;
-}
-
-.col-4{
-	width: calc(33.33333%);
+.btn{
+	height:var(--input-height);
+	border: 0;
+	border-radius: 5px;
+	text-align: center;
+	line-height: var(--input-height);
+	text-decoration: none;
+	color: var(--text-color)
 }

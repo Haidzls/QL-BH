@@ -79,12 +79,12 @@
 	background-color: #fff;
 	display: flex;
 	height: var(--header-height);
-	position: absolute;
+	position: fixed;
 	left: var(--left-menu-width);
 	justify-content: space-between;
 	align-items: center;
 	box-shadow: 0 0.5px 10px rgba(0,0,0,.15);
-	z-index:1;
+	z-index:100;
 }
 
 .header_name{
@@ -258,6 +258,13 @@
 }
 
 /* trang kho hang */
+/* content header */
+
+.content__header{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
 
 .search{
 	padding: 10px;
@@ -267,11 +274,13 @@
 }
 
 .search_section{
-	display: flex;
+	display: inline-flex;
+	box-shadow: 0 0 5px #aeb2ae;
+	width: 100%;
 }
 
 .search_input{
-	width: 80%;
+	width: 100%;
 	height: var(--input-height);
 	border-radius: 0;
 	border: 1px solid #000;
@@ -300,7 +309,160 @@
 	cursor: pointer;
 }
 
-/* .sub__icon{
-	color: var(--theme-color-red);
-	margin-right: 4px;
-} */
+/* sort section */
+
+.sort_section{
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+
+.sort_header{
+	height: 40px;
+	width: 120px;
+	border: 2px solid #aeb2ae;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	cursor: pointer;
+}
+
+.sort_section:hover .sort{
+	display: block;
+	cursor: pointer;
+}
+
+.sort{
+	position: absolute;
+	z-index: 1;
+	top: 40px;
+	display: none;
+}
+
+.sort_child{
+	display: block;
+	height: 40px;
+	width: 240px;
+	border: 1px solid #aeb2ae;
+	background-color: #ffffff;
+	text-align: left;
+	line-height: 40px;
+}
+
+.sort_child a{
+	text-decoration: none;
+	color: var(--text-color);
+	padding: 4px;
+}
+
+/* edit button */
+
+.edit_button{
+	top: 12px;
+	width: 200px;
+	font-size: 18px;
+	background-color: #3bb54a;
+	box-shadow: 0 0 5px #3bb54a;
+	margin-right: 22px;
+}
+
+.edit_button:hover{
+	box-shadow: 0 0 10px #3bb54a;
+}
+
+/* note */
+
+.note{
+	margin-left: 22px;
+	text-align: end;
+}
+
+/* inventory */
+
+.inventory_section{
+	margin: 0 22px 22px;
+	padding-top: 22px;
+	border-top: 2px solid red;
+	max-height: 100%;
+}	
+
+.inventory{
+	display: flex;
+	padding-bottom: 22px;
+}
+
+.inventory_info{
+	display:flex;
+	border: 2px solid red;
+	border-radius: 5px;
+	overflow: hidden;
+	background-color: #fbfbfb;
+	width: 80vh;
+}
+
+.inventory_img{
+	height: 120px;
+	weight: 120px;
+	object-fit: contain;
+}
+
+.inventory_content{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	margin: 16px;
+	width: 100%;
+}
+
+.iventory_name{
+	margin-top: -8px;
+	font-size: 24px;
+	font-weight: 500;
+}
+
+.line2{
+	display: flex;
+	justify-content: space-between;
+	opacity: 0.6;
+}
+
+.line3{
+	display: flex;
+	justify-content: space-between;
+	opacity: 0.6;
+
+}
+
+.iventory_number{
+	font-size:20px;
+	font-weight: 500;
+}
+
+.inventory_button{
+	display: flex;
+	flex-direction: column;
+	width: 30vh;
+	justify-content: space-around;
+	margin-left: 24px;
+}
+
+.inventory_btn{
+	background-color: red;
+	width: 60px;
+}
+
+.inventory_btn--add{
+	box-shadow: 0px 0px 5px orange;
+	background-color: orange;
+}
+
+.inventory_btn--edit{
+	box-shadow: 0px 0px 5px #3bb54a;
+	background-color: #3bb54a;
+}
+
+.inventory_btn--delete{
+	box-shadow: 0px 0px 5px red;
+	background-color: red;
+}
+
