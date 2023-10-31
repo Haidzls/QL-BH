@@ -421,14 +421,10 @@
 }
 
 .line2{
-	display: flex;
-	justify-content: space-between;
 	opacity: 0.6;
 }
 
 .line3{
-	display: flex;
-	justify-content: space-between;
 	opacity: 0.6;
 
 }
