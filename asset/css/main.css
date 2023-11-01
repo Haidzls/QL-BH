@@ -423,12 +423,15 @@
 }
 
 .line2{
+	display: flex;
 	opacity: 0.6;
+	justify-content: space-between;
 }
 
 .line3{
 	opacity: 0.6;
-
+	justify-content: space-between;
+	display: flex;
 }
 
 .iventory_number{
@@ -549,6 +552,7 @@
 /* nút thêm sản phẩm */
 
 .add_product__button{
+	min-width: 150px;
 	padding: 12px;
 	background-color: #3bb54a;
 	box-shadow: 0 0.5px 1px #3bb54a;

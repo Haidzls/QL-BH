@@ -55,9 +55,40 @@
       </div>
       <div class="content">
         <div class="content_title">
-          <span class="content_title__name"> Thêm sản phẩm mới vào kho hàng</span>
+          <span class="content_title__name"> Chỉnh sửa thông tin sản phẩm</span>
         </div>
         <form class="content_container">
+			<div class="inventory" style="padding:22px 22px 0;">
+				<div class="inventory_info">
+					<img class="inventory_img" src="./asset/img/xa_phong.jpg">
+					<div class="inventory_content">
+						<span class="iventory_name">Xà phòng </span>
+						<div class="line2">
+							<div class="iventory_in-stock">
+								<span class="inventory_description">Còn: </span>
+								<span class="iventory_number">999999 </span>
+							</div>
+							<div class="iventory_in-stock">
+								<span class="inventory_description">Đã bán: </span>
+								<span class="iventory_number">999999 </span>
+							</div>
+						</div>
+						<div class="line3">
+							<div class="inventory_in">
+								<span class="inventory_description">Giá nhập: </span>
+								<span class="iventory_number">999999 </span>
+								<span class="inventory_vnd">vnd </span>
+							</div>
+							<div class="inventory_in">
+								<span class="inventory_description">Giá bán: </span>
+								<span class="iventory_number">999999 </span>
+								<span class="inventory_vnd">vnd </span>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
 			<div class="add_title">
 				<span>Thông tin sản phẩm</span>
 			</div>
@@ -81,6 +112,7 @@
 					<option value="">Nước rửa tay</option>
 					<option value="">Xà phòng</option>
 				</select>
+				<!-- <input type="text" class="product_input" placeholder="  Nhập tên sản phẩm"> -->
 			</div>
 			<div class="add_product">
 				<div class="add_text">
@@ -95,7 +127,15 @@
 					<span>Số lượng nhập</span>
 				</div>
 				<input type="text" class="product_input" placeholder="  Nhập số lượng nhập vào kho">
-			</div><div class="add_product">
+			</div>
+			<div class="add_product">
+				<div class="add_text">
+					<i>*</i>
+					<span>Số lượng đã bán</span>
+				</div>
+				<input type="text" class="product_input" placeholder="  Nhập số lượng đơn hàng đã bán">
+			</div>
+			<div class="add_product">
 				<div class="add_text">
 					<i>*</i>
 					<span>giá nhập</span>
@@ -110,7 +150,7 @@
 				<input type="text" class="product_input" placeholder="  Đơn vị vnd">
 			</div>
 			<button class="add_product__button" type="submit">
-				thêm sản phẩm
+				lưu thông tin
 			</button>
         </form>
       </div>
