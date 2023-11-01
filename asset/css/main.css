@@ -365,6 +365,7 @@
 	background-color: #3bb54a;
 	box-shadow: 0 0 5px #3bb54a;
 	margin-right: 22px;
+	height: auto;
 }
 
 .edit_button:hover{
@@ -504,4 +505,44 @@
 	height: 16vh;	
 	margin-right: 22px;
 	margin-left: 10px;
+}
+
+/* thêm sản phẩm */
+.add_title{
+	padding: 22px;
+	font-size: 22px;
+	font-weight: 400;
+}
+
+.add_picture{
+	display:flex;
+	margin-left: 22px;
+	margin-bottom: 16px;
+	font-size: 16px;
+}
+
+.add_picture__text i{
+	color: red;
+	font-size: 18px;
+}
+
+.add_picture__link{
+	display: inline-flex;
+	flex-direction: column;
+	text-decoration: none;
+	align-items: center;
+	color: red;
+	border: 2px solid #dee2e6;
+	height: 100px;
+	justify-content: space-between;
+	padding: 5px;
+	margin-left: 10px;
+}
+
+.add_picture__link i{
+	font-size: 40px;
+}
+
+.add_picture__link:hover{
+	border: 2px solid red;
 }
