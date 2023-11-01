@@ -1,0 +1,54 @@
+{% extends "pages/base.html" %}
+{% block title %} Home {% endblock %}
+{% block content %}
+  <div class="content">
+    <div class="content_title">
+      <span class="content_title__hello">Xin chào </span>
+      <span class="content_title__name">Triệu Thanh Huyền</span>
+    </div>
+    <div class="content_container">
+      <div class="sub">
+        <i class="fa-solid fa-money-bill-transfer sub__icon"></i>
+        <span class="sub__text">Thống kê tài chính</span>
+      </div>
+      <div class="cash_flow">
+        <div class="cash_flow__child cash_flow__child--in">
+            <div class="cash_flow__icon">
+              <i class="fa-solid fa-warehouse"></i>
+            </div>
+            <div class="cash_flow__info">
+              <span class="info_catelory">Tiền nhập hàng</span>
+              <div class="info_money">
+                <span class="info_money_1">{{sumNhap}}</span>
+                <span class="info_money_2">VND</span>
+              </div>
+            </div>
+        </div>
+        <div class="cash_flow__child cash_flow__child--out">
+          <div class="cash_flow__icon">
+            <i class="fa-solid fa-money-bill-trend-up" style="color: #3bb54a;"></i>
+          </div>
+          <div class="cash_flow__info">
+            <span class="info_catelory">Tiền bán hàng</span>
+            <div class="info_money">
+              <span class="info_money_1">{{sumBan}}</span>
+              <span class="info_money_2">VND</span>
+            </div>
+          </div>
+      </div>
+      <div class="cash_flow__child cash_flow__child--profit">
+        <div class="cash_flow__icon">
+          <i class="fa-solid fa-coins" style="color: #ffd110;"></i>
+        </div>
+        <div class="cash_flow__info">
+          <span class="info_catelory">Tổng lợi nhuận</span>
+          <div class="info_money">
+            <span class="info_money_1">{{doanhThu}}</span>
+            <span class="info_money_2">VND</span>
+          </div>
+        </div>
+    </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -36,3 +36,10 @@ ul {
 	text-decoration: none;
 	color: var(--text-color)
 }
+a {
+    text-decoration: none;
+    color: #333;
+}
+a:hover {
+    color: red;
+}

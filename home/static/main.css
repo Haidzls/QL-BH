@@ -125,7 +125,7 @@
 }
 
 .user__info__img{
-	background-image: url(../img/avatar.jpg);
+	background-image: url(./avatar.jpg);
 	width: 30px;
 	height: 30px;
 	border-radius: 50%;

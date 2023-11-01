@@ -1,0 +1,120 @@
+{% extends "pages/base.html" %}
+{% block title %} Manage {% endblock %}
+{% block content %}
+    <div class="content">
+        <div class="content_title">
+        <span class="content_title__name"> Quản lý kho hàng</span>
+        </div>
+        <div class="content_container">
+            <div class="content__header">
+                <div class="search">
+                    <form class="search_section" method="post" action="{% url 'home:manage' %}">
+                        {% csrf_token %}
+                        <input class="search_input" type="search" name="search" placeholder="   Tìm kiếm sản phẩm theo tên">
+                        <button class="search_icon" type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="sort_section">
+                    <div class="sort_header">
+                        <span>Sắp xếp</span>
+                        <i class="fa-solid fa-caret-down"></i>
+                    </div>
+                    <ul class="sort">
+                        <li class="sort_child">
+                            <form method="post" action="{% url 'home:manage' %}">
+                                {% csrf_token %}
+                                <input type="hidden" id="sort" name="sort" value="slkct" required>
+                                <button style="border: none; background-color: #fff; font-size: 1rem;" type="submit">
+                                    theo số lượng cao đến thấp
+                                </button>
+                            </form>
+                        </li>
+                        <li class="sort_child">
+                            <form method="post" action="{% url 'home:manage' %}">
+                                {% csrf_token %}
+                                <input type="hidden" id="sort" name="sort" value="slktc" required>
+                                <button style="border: none; background-color: #fff; font-size: 1rem;" type="submit">
+                                    theo số lượng thấp đến cao
+                                </button>
+                            </form>
+                        </li>
+                        <li class="sort_child">
+                            <form method="post" action="{% url 'home:manage' %}">
+                                {% csrf_token %}
+                                <input type="hidden" id="sort" name="sort" value="gnct" required>
+                                <button style="border: none; background-color: #fff; font-size: 1rem;" type="submit">
+                                    theo giá nhập cao đến thấp
+                                </button>
+                            </form>
+                        </li>
+                        <li class="sort_child">
+                            <form method="post" action="{% url 'home:manage' %}">
+                                {% csrf_token %}
+                                <input type="hidden" id="sort" name="sort" value="gntc" required>
+                                <button style="border: none; background-color: #fff; font-size: 1rem;" type="submit">
+                                    theo giá nhập thấp đến cao
+                                </button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+                <a class="edit_button btn" href="/add">
+                    <span>Thêm sản phẩm mới</span>
+                </a>
+            </div>
+            <span class="note">Danh sách sản phẩm trong kho</span>
+            <div class="inventory_section">
+                {% for product in product %}
+                <div class="inventory">
+                    <div class="inventory_info">
+                        <img class="inventory_img" src={{ product.thumbnail }}>
+                        <div class="inventory_content">
+                            <span class="iventory_name">{{ product.shortDescription }} </span>
+                            <div class="line2">
+                                <div class="iventory_in-stock">
+                                    <span class="inventory_description">Còn:</span>
+                                    <span class="iventory_number"> {{ product.slk }} </span>
+                                </div>
+                            </div>
+                            <div class="line3">
+                                <div class="inventory_in">
+                                    <span class="inventory_description">Giá nhập: </span>
+                                    <span class="iventory_number">{{ product.gianhap }} </span>
+                                    <span class="inventory_vnd">vnd </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inventory_button">
+                        <form method="post"  action="{% url 'home:manage' %}">
+                            {% csrf_token %}
+                            <input type="hidden" id="updateSLB" name="updateSLB" value={{ product.id }} required>
+                            <button class="inventory_btn btn inventory_btn--add" type="submit">
+                                +1 Bán
+                            </button>
+                        </form>
+                        <form method="post"  action="{% url 'home:manage' %}">
+                            {% csrf_token %}
+                            <input type="hidden" id="update" name="update" value={{ product.id }} required>
+                            <button class="inventory_btn btn inventory_btn--edit" type="submit">
+                                Sửa
+                            </button>
+                        </form>
+                        <form method="post"  action="{% url 'home:manage' %}">
+                            {% csrf_token %}
+                            <input type="hidden" id="delete" name="delete" value={{ product.id }} required>
+                            <button class="inventory_btn btn inventory_btn--delete" type="submit">
+                                Xóa
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                {% endfor %}
+                
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

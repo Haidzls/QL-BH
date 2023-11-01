@@ -1,0 +1,9 @@
+install django
+
+create database web(Mysql)
+'NAME': 'web',
+'USER': 'root',
+'PASSWORD': '',
+pip install mysqlclient
+python manage.py makemigrations
+python manage.py migrate
