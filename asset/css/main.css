@@ -514,35 +514,50 @@
 	font-weight: 400;
 }
 
-.add_picture{
+.add_product{
 	display:flex;
 	margin-left: 22px;
 	margin-bottom: 16px;
 	font-size: 16px;
+	align-items: center;
+	justify-content: space-between;
 }
 
-.add_picture__text i{
+.add_text{
+	min-width: 15vw;
+}
+
+.add_text i{
 	color: red;
 	font-size: 18px;
 }
 
-.add_picture__link{
-	display: inline-flex;
-	flex-direction: column;
-	text-decoration: none;
-	align-items: center;
-	color: red;
-	border: 2px solid #dee2e6;
-	height: 100px;
-	justify-content: space-between;
-	padding: 5px;
-	margin-left: 10px;
+.product_input{
+	width: 100%;
+	height: var(--input-height);
+	border-radius: 0;
+	border: 1px solid #000;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	margin-right: 22px;
 }
 
-.add_picture__link i{
-	font-size: 40px;
-}
-
-.add_picture__link:hover{
+.product_input:hover{
 	border: 2px solid red;
+}
+
+/* nút thêm sản phẩm */
+
+.add_product__button{
+	padding: 12px;
+	background-color: #3bb54a;
+	box-shadow: 0 0.5px 1px #3bb54a;
+	border: 2px solid #3bb54a;
+	font-size: 18px;
+	margin-left: calc(100% - 173px);
+}
+
+.add_product__button:hover{
+	opacity: 0.9;
+	cursor: pointer;
 }
