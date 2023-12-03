@@ -1,0 +1,18 @@
+install python 3.9.10
+
+pip install django
+pip install mysqlclient
+mysqlclient lỗi
+error: Microsoft Visual C++ 14.0 or greater is required. Get it with "Microsoft C++ Build Tools": https://visualstudio.microsoft.com/visual-cpp-build-tools/
+      [end of output]
+
+https://stackoverflow.com/questions/64261546/how-to-solve-error-microsoft-visual-c-14-0-or-greater-is-required-when-inst
+
+create database web(Mysql)
+'NAME': 'web',
+'USER': 'root',
+'PASSWORD': '',
+
+python manage.py makemigrations
+python manage.py migrate
+insert.sql

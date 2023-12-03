@@ -1,0 +1,170 @@
+{% extends "pages/base.html" %}
+{% block title %} Manage {% endblock %}
+{% block content %}
+    <div class="content">
+        <div class="content_title">
+        <span class="content_title__name"> Kiểm soát đơn hàng</span>
+        </div>
+        <div class="content_container">
+            <div class="content__header">
+                <div class="search">
+                    <form class="search_section" method="post" action="{% url 'home:order' %}">
+                        {% csrf_token %}
+                        <input class="search_input" type="search" name="search" placeholder="   Tìm kiếm sản phẩm theo tên">
+                        <button class="search_icon" type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="sort_section">
+                    <div class="sort_header">
+                        <span>Sắp xếp</span>
+                        <i class="fa-solid fa-caret-down"></i>
+                    </div>
+                    <ul class="sort" style="right: 22px;">
+                        <li class="sort_child">
+                            <form method="post" action="{% url 'home:order' %}">
+                                {% csrf_token %}
+                                <input type="hidden" id="sort" name="sort" value="slbct" required>
+                                <button style="border: none; background-color: #fff; font-size: 1rem;" type="submit">
+                                    theo số lượng bán từ cao đến thấp
+                                </button>
+                            </form>
+                        </li>
+                        <li class="sort_child">
+                            <form method="post" action="{% url 'home:order' %}">
+                                {% csrf_token %}
+                                <input type="hidden" id="sort" name="sort" value="slbtc" required>
+                                <button style="border: none; background-color: #fff; font-size: 1rem;" type="submit">
+                                    theo số lượng bán từ thấp đến cao
+                                </button>
+                            </form>
+                        </li>
+                        <li class="sort_child">
+                            <form method="post" action="{% url 'home:order' %}">
+                                {% csrf_token %}
+                                <input type="hidden" id="sort" name="sort" value="gbct" required>
+                                <button style="border: none; background-color: #fff; font-size: 1rem;" type="submit">
+                                    theo giá bán cao đến thấp
+                                </button>
+                            </form>
+                        </li>
+                        <li class="sort_child">
+                            <form method="post" action="{% url 'home:order' %}">
+                                {% csrf_token %}
+                                <input type="hidden" id="sort" name="sort" value="gbtc" required>
+                                <button style="border: none; background-color: #fff; font-size: 1rem;" type="submit">
+                                    theo giá bán thấp đến cao
+                                </button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+                <!-- <a class="edit_button btn" href="youtube.com">
+                    <span>Chi tiết lượt mua</span>
+                </a> -->
+            </div>
+            <span class="note">Danh sách sản phẩm đã bán</span>
+            <div class="inventory_section">
+                {% for product in product %}
+                <div class="inventory">
+                    <div class="inventory_info">
+                        <img class="inventory_img" src={{ product.thumbnail }}>
+                        <div class="inventory_content">
+                            <span class="iventory_name">{{ product.shortDescription }} </span>
+                            <div class="line2">
+                                <div class="iventory_in-stock">
+                                    <span class="inventory_description">Đã bán: </span>
+                                    <span class="iventory_number"> {{ product.slb }} </span>
+                                </div>
+                            </div>
+                            <div class="line3">
+                                <div class="inventory_in">
+                                    <span class="inventory_description">Giá bán: </span>
+                                    <span class="iventory_number">{{ product.giaban }} </span>
+                                    <span class="inventory_vnd">vnd </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profit">
+                        <div class="profit_icon">
+                            <i class="fa-solid fa-money-bill-trend-up" style="color: #3bb54a;"></i>
+                        </div>
+                        <div class="profit_info">
+                            <span class="profit__info_catelory">Tổng</span>
+                            <div class="profit__info_money">
+                            <span class="profit__info_money_1">{{product.sum}}</span>
+                            <span class="profit__info_money_2">VND</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+     
+
+            </div>
+            <div class="sum_profit">
+                <div class="profit">
+                    <div class="profit_icon">
+                        <i class="fa-solid fa-money-bill-trend-up" style="color: #3bb54a;"></i>
+                    </div>
+                    <div class="profit_info">
+                        <span class="profit__info_catelory">Tổng doanh thu</span>
+                        <div class="profit__info_money">
+                        <span class="profit__info_money_1">{{tong}}</span>
+                        <span class="profit__info_money_2">VND</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'order.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+</head>
+<body>
+    <div>
+        <h1>
+            <a href="/order">
+                Order
+            </a>
+        </h1>
+        {% for product in product %}
+        <tbody>
+                <tr>
+                    <th>
+                     <img class="img" src= {{ product.thumbnail }}  alt="/">
+                    </th>
+                    <br/>
+                    <td>{{ product.shortDescription }}</td>
+                    <br/>
+                    <td>Số lượng kho: {{ product.slk }}</td>
+                    <br/>
+                    <td>Số lượng bán: {{ product.slb }}</td>
+                    <br/>
+                    <td>Giá nhập: {{ product.gianhap }}</td>
+                    <br/>
+                    <td>Giá bán: {{ product.giaban }}</td>
+                    <br/>
+                    <td>Phân loại: {{ product.category }}</td> 
+                    <br/>
+                </tr>
+             </tbody>
+             <br/>
+             <br/>
+         {% endfor %}
+       
+    </div>
+</body>
+</html>

@@ -1,0 +1,305 @@
+{% extends "pages/base.html" %}
+{% block title %} Manage {% endblock %}
+{% block content %}
+<div class="content">
+    {% if product%}  
+    <div class="content_title">
+        <span class="content_title__name"> Chỉnh sửa thông tin sản phẩm</span>
+      </div>
+    <form class="content_container" method="post" action="{% url 'home:add' %}">
+        {% csrf_token %}
+        <div class="inventory" style="padding:22px 22px 0;">
+            <div class="inventory_info">
+                <img class="inventory_img" src="{{ product.thumbnail }}">
+                <div class="inventory_content">
+                    <span class="iventory_name">{{ product.shortDescription|safe }} </span>
+                    <div class="line2">
+                        <div class="iventory_in-stock">
+                            <span class="inventory_description">Còn: </span>
+                            <span class="iventory_number">{{ product.slk }} </span>
+                        </div>
+                        <div class="iventory_in-stock">
+                            <span class="inventory_description">Đã bán: </span>
+                            <span class="iventory_number">{{ product.slb }} </span>
+                        </div>
+                    </div>
+                    <div class="line3">
+                        <div class="inventory_in">
+                            <span class="inventory_description">Giá nhập: </span>
+                            <span class="iventory_number">{{ product.gianhap }} </span>
+                            <span class="inventory_vnd">vnd </span>
+                        </div>
+                        <div class="inventory_in">
+                            <span class="inventory_description">Giá bán: </span>
+                            <span class="iventory_number">{{ product.giaban}} </span>
+                            <span class="inventory_vnd">vnd </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="add_title">
+            <span>Thông tin sản phẩm</span>
+        </div>
+        <div class="add_product">
+            <label  for="id_shortDescription">
+                <div class="add_text">
+                    <i>*</i>
+                    <span>Tên sản phẩm</span>
+                </div>
+            </label>
+            <input type="text" class="product_input" placeholder="  Nhập tên sản phẩm" id="id_shortDescription"  name="shortDescription" value="{{ product.shortDescription|safe }}" >
+        </div>
+        <!-- <div class="add_product">
+            <label  for="id_category">
+                <div class="add_text">
+                    <i>*</i>
+                    <span>Danh mục</span>
+                </div>
+            </label>
+            <input type="text" class="product_input" placeholder="  Nhập tên sản phẩm" id="id_category" name="category" value="{{ product.category|safe }}">
+        </div> -->
+        <div class="add_product">
+            <label for="category">
+                <div class="add_text">
+                    <i>*</i>
+                    <span>Danh mục</span>
+                </div>
+            </label>
+            <select name="category" id="category" class="category product_input">
+                <option value="{{ product.category|safe }}">{{ product.category|safe }}</option>
+                <option value="Sữa rửa mặt">Sữa rửa mặt</option>
+                <option value="Dầu gội">Dầu gội</option>
+                <option value="Sữa tắm">Sữa tắm</option>
+                <option value="Nước rửa tay">Nước rửa tay</option>
+                <option value="Xà phòng">Xà phòng</option>
+            </select>
+        </div>
+        <div class="add_product">
+            <label  for="id_thumbnail">
+                <div class="add_text">
+                    <i>*</i>
+                    <span>Hình ảnh sản phẩm</span>
+                </div>
+            </label>
+            <input type="text" class="product_input" placeholder="  Nhập đường dẫn của ảnh" id="id_thumbnail" name="thumbnail" value="{{ product.thumbnail|safe }}">
+        </div>
+        <input type="hidden" id="id_slb" name="slb" value="0">
+
+        <div class="add_product">
+            <label  for="id_slkbd">
+                <div class="add_text">
+                    <i>*</i>
+                    <span>Số lượng nhập bd</span>
+                </div>
+            </label>
+            <input type="text" class="product_input" placeholder="  Nhập số lượng nhập vào kho" id="id_slkbd" name="slkbd" value="{{ product.slkbd|safe }}">
+        </div>
+        <input type="hidden" id="id_slk" name="slk" value="{{ product.slk|safe }}">
+        <div class="add_product">
+            <label  for="id_gianhap">
+                <div class="add_text">
+                    <i>*</i>
+                    <span>giá nhập</span>
+                </div>
+            </label>
+            <input type="text" class="product_input" placeholder="  Đơn vị vnd" id="id_gianhap" name="gianhap" value="{{ product.gianhap|safe }}">
+        </div>
+        <div class="add_product">
+            <label  for="id_giaban">
+                <div class="add_text">
+                    <i>*</i>
+                    <span>Giá bán</span>
+                </div>
+            </label>
+            <input type="text" class="product_input" placeholder="  Đơn vị vnd" id="id_giaban" name="giaban" value="{{ product.giaban|safe }}">
+        </div>
+        <input type="hidden" id="update" name="update" value={{ product.id }}>
+        <button class="add_product__button" type="submit">
+            cập nhật sản phẩm
+        </button>
+    </form>
+    {% else %}
+    <form class="content_container" method="post" action="{% url 'home:add' %}">
+        {% csrf_token %}
+        <div class="add_title">
+            <span>Thông tin sản phẩm</span>
+        </div>
+        <div class="add_product">
+            <label  for="id_shortDescription">
+                <div class="add_text">
+                    <i>*</i>
+                    <span>Tên sản phẩm</span>
+                </div>
+            </label>
+            <input type="text" class="product_input" placeholder="  Nhập tên sản phẩm" id="id_shortDescription"  name="shortDescription"  >
+        </div>
+        <!-- <div class="add_product">
+            <label  for="id_category">
+                <div class="add_text">
+                    <i>*</i>
+                    <span>Danh mục</span>
+                </div>
+            </label>
+            <input type="text" class="product_input" placeholder="  Nhập tên sản phẩm" id="id_category" name="category" >
+        </div> -->
+        <div class="add_product">
+            <label for="category">
+                <div class="add_text">
+                    <i>*</i>
+                    <span>Danh mục</span>
+                </div>
+            </label>
+            <select name="category" id="category" class="category product_input">
+                <option value="">Chọn danh mục sản phẩm</option>
+                <option value="Sữa rửa mặt">Sữa rửa mặt</option>
+                <option value="Dầu gội">Dầu gội</option>
+                <option value="Sữa tắm">Sữa tắm</option>
+                <option value="Nước rửa tay">Nước rửa tay</option>
+                <option value="Xà phòng">Xà phòng</option>
+            </select>
+        </div>
+        <div class="add_product">
+            <label  for="id_thumbnail">
+                <div class="add_text">
+                    <i>*</i>
+                    <span>Hình ảnh sản phẩm</span>
+                </div>
+            </label>
+            <input type="text" class="product_input" placeholder="  Nhập đường dẫn của ảnh" id="id_thumbnail" name="thumbnail" >
+        </div>
+        <input type="hidden" id="id_slb" name="slb" value="0">
+
+        <div class="add_product">
+            <label  for="id_slk">
+                <div class="add_text">
+                    <i>*</i>
+                    <span>Số lượng nhập</span>
+                </div>
+            </label>
+            <input type="text" class="product_input" placeholder="  Nhập số lượng nhập vào kho" id="id_slk" name="slk" >
+    
+        </div>
+        <div class="add_product">
+            <label  for="id_slkbd">
+                <div class="add_text">
+                    <i>*</i>
+                    <span>Số lượng kho ban đầu</span>
+                </div>
+            </label>
+            <input type="text" class="product_input" placeholder="  Nhập số lượng nhập vào kho" id="id_slkbd" name="slkbd" >
+    
+        </div>
+        <div class="add_product">
+            <label  for="id_gianhap">
+                <div class="add_text">
+                    <i>*</i>
+                    <span>giá nhập</span>
+                </div>
+            </label>
+            <input type="text" class="product_input" placeholder="  Đơn vị vnd" id="id_gianhap" name="gianhap" >
+        </div>
+        <div class="add_product">
+            <label  for="id_giaban">
+                <div class="add_text">
+                    <i>*</i>
+                    <span>Giá bán</span>
+                </div>
+            </label>
+            <input type="text" class="product_input" placeholder="  Đơn vị vnd" id="id_giaban" name="giaban" >
+        </div>
+        <button class="add_product__button" type="submit">
+            thêm sản phẩm
+        </button>
+    {% endif %}
+  </div>
+
+{% endblock %}
+
+    {% if product%}  
+        <form method="post" action="{% url 'home:add' %}">
+            {% csrf_token %}
+            <div >
+                <label  for="id_shortDescription">Tên</label>
+                <input type="text" id="id_shortDescription"  name="shortDescription" value="{{ product.shortDescription|safe }}" required />
+            </div>
+            <div >
+                <label  for="id_status">Số lượng kho</label>
+                <input type="text" id="id_status"  name="slk" value="{{ product.slk|safe }}" required />
+            </div>
+            <div >
+                <label  for="id_status">Số lượng bán</label>
+                <input type="text" id="id_status"  name="slb" value="{{ product.slb|safe }}" required />
+            </div>
+            <div >
+                <label  for="id_price">Giá (đ) nhập</label>
+                <input type="text" id="id_price"  name="gianhap" value="{{ product.gianhap|safe }}" required />
+            </div>
+            <div >
+                <label  for="id_price">Giá (đ) bán</label>
+                <input type="text" id="id_price"  name="giaban" value="{{ product.giaban|safe }}" required />
+            </div>
+            <div >
+                <label  for="id_thumbnail">Thumbnail</label>
+                <input type="text" id="id_thumbnail"  name="thumbnail" value="{{ product.thumbnail|safe }}" placeholder="Link sản phẩm" required />
+            </div>
+            <div >
+                <label for="id_category">Thể loại</label>
+                <select name="category" id="category">
+                    <option value="{{ product.category|safe }}">{{product.category}}</option>
+                    <option value="Sữa rữa mặt">Sữa rữa mặt</option>
+                    <option value="Sữa tắm">Sữa tắm</option>
+                    <option value="Xà phòng">Xà phòng</option>
+                    <option value="Nước rữa tay">Nước rữa tay</option>
+                    <option value="Dầu gội">Dầu gội</option>
+                  </select>
+            </div>
+            <input type="hidden" id="update" name="update" value={{ product.id }}>
+            <button type="submit">
+                Submit
+            </button>
+    {% else %}
+    <form method="post" action="{% url 'home:add' %}">
+        {% csrf_token %}
+        <div >
+            <label  for="id_shortDescription">Tên</label>
+            <input type="text" id="id_shortDescription"  name="shortDescription" required />
+        </div>
+        <div >
+            <label  for="id_status">Số lượng kho</label>
+            <input type="text" id="id_status"  name="slk" required />
+        </div>
+        <div >
+            <label  for="id_status">Số lượng bán</label>
+            <input type="text" id="id_status"  name="slb" required />
+        </div>
+        <div >
+            <label  for="id_price">Giá (đ) nhập</label>
+            <input type="text" id="id_price"  name="gianhap" required />
+        </div>
+        <div >
+            <label  for="id_price">Giá (đ) bán</label>
+            <input type="text" id="id_price"  name="giaban" required />
+        </div>
+        <div >
+            <label  for="id_thumbnail">Thumbnail</label>
+            <input type="text" id="id_thumbnail"  name="thumbnail" placeholder="Link sản phẩm" required />
+        </div>
+        <div >
+            <label for="id_category">Thể loại</label>
+            <select name="category" id="category">
+                <option value="Sữa rữa mặt">Sữa rữa mặt</option>
+                <option value="Sữa tắm">Sữa tắm</option>
+                <option value="Xà phòng">Xà phòng</option>
+                <option value="Nước rữa tay">Nước rữa tay</option>
+                <option value="Dầu gội">Dầu gội</option>
+              </select>
+        </div>
+        <button type="submit">
+            Submit
+        </button>
+    </form>
+    {% endif %}
+</body>
+</html>
